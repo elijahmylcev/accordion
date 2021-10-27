@@ -1,0 +1,26 @@
+{
+  "name": "accordion",
+  "version": "1.0.0",
+  "description": "sidebar accordion webpack js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elijahmylcev/accordion.git"
+  },
+  "keywords": [
+    "js",
+    "webpack",
+    "js",
+    "accordion",
+    "sidebar"
+  ],
+  "author": "Elijah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elijahmylcev/accordion/issues"
+  },
+  "homepage": "https://github.com/elijahmylcev/accordion#readme"
+}
