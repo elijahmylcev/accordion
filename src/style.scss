@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hamburger {
+  margin: 15px auto 0 auto;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  span {
+    border-radius: 5px;
+    height: 4px;
+    background-color: #000;
+    margin-top: 5px;
+    transition: 0.7s all;
+  }
+
+  cursor:pointer;
+}
+
+.hamburger-active {
+  span {
+    &:first-child {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    &:last-child {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  }
+
+  cursor:pointer;
+}

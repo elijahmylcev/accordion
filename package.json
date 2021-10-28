@@ -4,7 +4,11 @@
   "description": "sidebar accordion webpack js",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
