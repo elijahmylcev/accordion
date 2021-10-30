@@ -42,9 +42,38 @@
 }
 
 .menu {
+  display: none;
+  &__item {
+    display: flex;
+    align-items: center;
+    &_img {
+      margin-right: 10px;
+      width: 18px;
+    }
+    &_text {
+      width: 100px;
+      margin-right: 10px;
+    }
+    &_icon {
+      display: block;
+      height: 1px;
+      width: 8px;
+      background-color: #000;
+
+      &:first-child {
+        transform: rotate(35deg);
+      }
+    }
+  }
+}
+
+.menu-active {
+  display: flex;
+  flex-direction: column;
   margin: 20px auto 0 auto;
   width: fit-content;
   &__item {
+    display: flex;
     cursor: pointer;
   }
 }
