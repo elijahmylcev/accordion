@@ -47,13 +47,15 @@
 
   &__item {
     display: flex;
+
     flex-direction: column;
     justify-content: start;
 
     &_title {
       display: flex;
-      padding: 5px 10px;
       cursor: pointer;
+      padding: 5px;
+
 
       &_wrapper {
         display: flex;
@@ -122,12 +124,18 @@
           margin-right: 10px;
         }
       }
+      &:hover {
+        background-color: rgb(212, 197, 197);
+      }
+    }
+
+    &_body {
+      padding: 5px 10px;
+      display: none;
     }
   }
 
-  &_body {
-    display: block;
-  }
+
 }
 
 .menu-active {
@@ -135,4 +143,8 @@
   flex-direction: column;
   margin: 20px auto 0 auto;
   width: fit-content;
+}
+
+.body-opened {
+  display: block;
 }
