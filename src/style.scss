@@ -44,30 +44,89 @@
 
 .menu {
   display: none;
+
   &__item {
-    padding: 5px 10px;
     display: flex;
-    align-items: center;
-    &_img {
-      margin-right: 10px;
-      width: 18px;
-    }
-    &_text {
-      width: 100px;
-      margin-right: 10px;
-    }
-    span {
-      display: block;
-      height: 1px;
-      width: 8px;
-      background-color: rgba(49, 44, 44, 0.74);
-      &:first-of-type {
-        transform: translateX(2px) rotate(35deg);
+    flex-direction: column;
+    justify-content: start;
+
+    &_title {
+      display: flex;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &_wrapper {
+        display: flex;
+        align-items: center;
+
+        span {
+          display: block;
+          height: 2px;
+          width: 8px;
+          background-color: black;
+
+          &:first-of-type {
+            transform: translateX(3px) rotate(40deg);
+          }
+
+          &:last-child {
+            transform: rotate(-40deg);
+          }
+        }
+
+
       }
-      &:last-child {
-        transform: rotate(-35deg);
+
+      &_img {
+        margin-right: 10px;
+        width: 18px;
+      }
+
+      &_text {
+        display: block;
+        text-align: left;
+
+
+        &-info {
+          color: rgb(218, 32, 32);
+          font-weight: 700;
+          width: 100px;
+          margin-right: 10px;
+        }
+
+        &-details {
+          color: blue;
+          font-weight: 700;
+          width: 100px;
+          margin-right: 10px;
+        }
+
+        &-stats {
+          color: green;
+          font-weight: 700;
+          width: 100px;
+          margin-right: 10px;
+        }
+
+        &-keywords {
+          color: blueviolet;
+          font-weight: 700;
+          width: 100px;
+          margin-right: 10px;
+        }
+
+        &-properties {
+          color: orangered;
+          font-weight: 700;
+          width: 100px;
+          margin-right: 10px;
+        }
       }
     }
+  }
+
+  &_body {
+    display: block;
   }
 }
 
@@ -76,8 +135,4 @@
   flex-direction: column;
   margin: 20px auto 0 auto;
   width: fit-content;
-  &__item {
-    display: flex;
-    cursor: pointer;
-  }
 }
