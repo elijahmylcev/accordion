@@ -14,6 +14,7 @@ menuItem.forEach(element => {
   element.addEventListener('click', (event) => {
     const selectedElement = event.target.closest('.menu__item')
 
+    //Added||removing class
     if (selectedElement.lastElementChild.classList.contains('body-opened')) {
       // Если выбранный элемент активирован, то удаляем класс
       selectedElement.closest('.menu__item').lastElementChild.classList.remove('body-opened');
@@ -29,9 +30,6 @@ menuItem.forEach(element => {
       selectedElement.lastElementChild.classList.add('body-opened');
       selectedElement.firstElementChild.lastElementChild.style.transform = 'translate(4px) rotate(180deg)';
     }
-
-
-
-
   })
 });
+
