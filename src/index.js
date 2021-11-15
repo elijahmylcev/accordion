@@ -12,17 +12,26 @@ hamburger.addEventListener('click', () => {
 
 menuItem.forEach(element => {
   element.addEventListener('click', (event) => {
-
+    const selectedElement = event.target.closest('.menu__item')
     menuItem.forEach(element => {
-      if (element.closest('.menu__item').lastElementChild.classList.contains('body-opened')) {
         element.closest('.menu__item').lastElementChild.classList.remove('body-opened');
 
         element.closest('.menu__item').firstElementChild.lastElementChild.style.transform = 'none';
-      }
     });
 
-    event.target.closest('.menu__item').lastElementChild.classList.toggle('body-opened');
+    if (selectedElement.lastElementChild.classList.contains('body-opened')) {
+      selectedElement.closest('.menu__item').lastElementChild.classList.remove('body-opened');
 
-    event.target.closest('.menu__item').firstElementChild.lastElementChild.style.transform = 'translate(4px) rotate(180deg)';
+      element.closest('.menu__item').firstElementChild.lastElementChild.style.transform = 'none';
+
+    } else {
+      selectedElement.lastElementChild.classList.add('body-opened');
+      
+      selectedElement.firstElementChild.lastElementChild.style.transform = 'translate(4px) rotate(180deg)';
+    }
+    
+    
+
+    
   })
 });
