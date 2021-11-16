@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font: 1.2rem sans-serif;
   background-color: rgb(90, 83, 83);
+
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .hamburger {
@@ -44,8 +49,15 @@
 }
 
 .menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  height: 0px;
+  overflow: hidden;
   user-select: none;
+  transition: height .3s ease-in;
+  margin: 20px auto 0 auto;
 
   &__item {
     display: flex;
@@ -148,24 +160,17 @@
 
     &_body {
       padding: 4px 10px;
-      width: 160px;
-      height: 0px;
-      opacity: 0;
+      width: 235px;
+      // max-height: 0px;
+      overflow: hidden;
+      transition: max-height .3s ease-in;
     }
   }
-
-
 }
+
+
+// Activate classes
 
 .menu-active {
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto 0 auto;
-  width: fit-content;
-}
-
-.body-opened {
   height: auto;
-  opacity: 1;
-  transition: all .6s ease-in;
 }
