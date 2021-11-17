@@ -4,11 +4,6 @@
   box-sizing: border-box;
   font: 1.2rem sans-serif;
   background-color: rgb(90, 83, 83);
-
-  -webkit-user-select: none;
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .hamburger {
@@ -159,9 +154,8 @@
     }
 
     &_body {
-      padding: 4px 10px;
+      margin: 4px auto;
       width: 235px;
-      // max-height: 0px;
       overflow: hidden;
       transition: max-height .3s ease-in;
     }

@@ -1,4 +1,4 @@
-import 'normalize.css'
+import 'reset-css';
 import './style.scss';
 
 const hamburger = document.querySelector('.hamburger');
