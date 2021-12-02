@@ -1,51 +1,45 @@
-   
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
 console.log('IsDev value: ', isDev);
 
 const optimization = () => {
   const config = {
     splitChunks: {
-      chunks: 'all'
-    }
-  }
+      chunks: 'all',
+    },
+  };
 
   if (isProd) {
-    config.minimizer = [
-      new CssMinimizerPlugin,
-      new TerserWebpackPlugin
-    ]
+    config.minimizer = [new CssMinimizerPlugin(), new TerserWebpackPlugin()];
   }
 
-  return config
-}
+  return config;
+};
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: './accordion.js',
+  entry: './index.js',
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'docs'),
-    assetModuleFilename: '[hash][ext][query]'
+    assetModuleFilename: '[hash][ext][query]',
   },
   resolve: {
     extensions: ['.js', '.json', '.png'],
     alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
 
   optimization: optimization(),
@@ -57,31 +51,28 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       minify: {
-        collapseWhitespace: isProd
-      }
+        collapseWhitespace: isProd,
+      },
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: filename('css')
-    })
+      filename: filename('css'),
+    }),
   ],
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
       {
         test: /\.(s[ac]ss)$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.m?js$/,
@@ -89,10 +80,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
-    ]
-  }
-}
+    ],
+  },
+};

@@ -1,18 +1,4 @@
-import 'reset-css';
-import './style2.scss';
-
-// hamburger
-const hamburger = document.querySelector('.hamburger');
-const accordion = document.querySelector('.accordion');
-
-hamburger.addEventListener('click', function () {
-  this.classList.toggle('hamburger-active');
-  accordion.classList.toggle('accordion-active');
-});
-
-toggleAccordionSection('.accordion__title');
-
-function toggleAccordionSection(triggersSelector, itemsSelector) {
+export default function toggleAccordionSection(triggersSelector) {
   const buttons = document.querySelectorAll(triggersSelector);
 
   buttons.forEach((btn) => {

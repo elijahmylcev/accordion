@@ -22,7 +22,7 @@
     transition: 0.7s all;
   }
 
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .hamburger-active {
@@ -40,7 +40,7 @@
     }
   }
 
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .accordion {
@@ -51,120 +51,120 @@
   height: 0px;
   overflow: hidden;
   user-select: none;
-  transition: height .3s ease-in;
+  transition: height 0.3s ease-in;
   margin: 20px auto 0 auto;
+  // .accordion__title
 
-  &__item {
-    display: flex;
+  &__title {
+    // .accordion__title_text-info
     position: relative;
-    flex-direction: column;
-    justify-content: start;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 5px;
 
-    &_title {
+    &_wrapper {
       display: flex;
-      cursor: pointer;
-      padding: 5px;
+      align-items: center;
+      transition: all 0.3s ease-in;
 
-
-      &_wrapper {
-        display: flex;
-        align-items: center;
-        transition: all .3s ease-in;
-
-        span {
-          display: block;
-          height: 2px;
-          width: 12px;
-          background-color: black;
-
-          &:first-of-type {
-            transform: translateX(3px) rotate(40deg);
-          }
-
-          &:last-child {
-            transform: rotate(-40deg);
-          }
-        }
-
-
-      }
-
-      &_img {
-        margin-right: 10px;
-        width: 26px;
-      }
-
-      &_text {
+      span {
         display: block;
-        text-align: left;
+        height: 2px;
+        width: 12px;
+        background-color: black;
 
-
-        &-info {
-          color: rgb(218, 32, 32);
-          font-weight: 700;
-          width: 160px;
-          margin-right: 10px;
+        &:first-of-type {
+          transform: translateX(4px) rotate(40deg);
         }
 
-        &-details {
-          color: blue;
-          font-weight: 700;
-          width: 160px;
-          margin-right: 10px;
-        }
-
-        &-stats {
-          color: green;
-          font-weight: 700;
-          width: 160px;
-          margin-right: 10px;
-        }
-
-        &-keywords {
-          color: blueviolet;
-          font-weight: 700;
-          width: 160px;
-          margin-right: 10px;
-        }
-
-        &-properties {
-          color: orangered;
-          font-weight: 700;
-          width: 160px;
-          margin-right: 10px;
+        &:last-child {
+          transform: rotate(-40deg);
         }
       }
+    }
 
+    &_img {
+      margin-right: 10px;
+      width: 26px;
+    }
+
+    &_text {
+      display: block;
+      text-align: left;
+
+      &-info {
+        color: rgb(218, 32, 32);
+        font-weight: 700;
+        width: 160px;
+        margin-right: 10px;
+      }
+
+      &-details {
+        color: blue;
+        font-weight: 700;
+        width: 160px;
+        margin-right: 10px;
+      }
+
+      &-stats {
+        color: green;
+        font-weight: 700;
+        width: 160px;
+        margin-right: 10px;
+      }
+
+      &-keywords {
+        color: blueviolet;
+        font-weight: 700;
+        width: 160px;
+        margin-right: 10px;
+      }
+
+      &-properties {
+        color: orangered;
+        font-weight: 700;
+        width: 160px;
+        margin-right: 10px;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 45px;
+      background: rgba(128, 124, 123, 0.3);
+      transition: all 0.6s ease;
+    }
+
+    &:hover {
       &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 30px;
-        background: rgba(128, 124, 123, 0.3);
-        transition: all .6s ease;
-      }
-
-      &:hover {
-        &:before {
-          width: 84%;
-        }
+        width: 84%;
       }
     }
+  }
 
-    &_body {
-      margin: 4px auto;
-      width: 235px;
-      overflow: hidden;
-      transition: max-height .3s ease-in;
-    }
+  &__body {
+    margin: 10px auto;
+    max-height: 0px;
+    width: 235px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
   }
 }
 
-
-// Activate classes
+.body-active {
+  // margin: 4px auto;
+  overflow: visible;
+}
 
 .accordion-active {
   height: auto;
+}
+
+.title-active {
+  transform: translate(4px) rotate(180deg);
 }
