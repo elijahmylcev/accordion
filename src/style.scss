@@ -43,7 +43,7 @@
   cursor:pointer;
 }
 
-.menu {
+.accordion {
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -165,6 +165,6 @@
 
 // Activate classes
 
-.menu-active {
+.accordion-active {
   height: auto;
 }

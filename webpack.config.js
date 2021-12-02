@@ -35,7 +35,7 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: './index.js',
+  entry: './accordion.js',
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'docs'),
