@@ -1,17 +1,19 @@
-export default function toggleAccordionSection(triggersSelector) {
-  const buttons = document.querySelectorAll(triggersSelector);
+export default function toggleAccordionSection(triggerSelector) {
+  const trigger = document.querySelector(triggerSelector);
 
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', function () {
-      // Индикатор выбранного заголовка
-      this.lastElementChild.classList.toggle('title-active');
-      this.nextElementSibling.classList.toggle('body-active');
+  trigger.addEventListener('click', function (e) {
+    const target = e.target;
 
-      if (this.lastElementChild.classList.contains('title-active')) {
-        this.nextElementSibling.style.maxHeight = `${this.nextElementSibling.scrollHeight}px`;
-      } else {
-        this.nextElementSibling.style.maxHeight = '0px';
-      }
-    });
+    if (target.className != 'accordion__title') {
+      return;
+    }
+
+    target.lastElementChild.classList.toggle('title-active');
+    target.nextElementSibling.classList.toggle('body-active');
+    if (target.lastElementChild.classList.contains('title-active')) {
+      target.nextElementSibling.style.maxHeight = `${target.nextElementSibling.scrollHeight}px`;
+    } else {
+      target.nextElementSibling.style.maxHeight = '0px';
+    }
   });
 }
