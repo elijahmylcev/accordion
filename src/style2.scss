@@ -148,11 +148,17 @@
   }
 
   &__body {
-    margin: 4px auto;
+    margin: 10px auto;
+    max-height: 0px;
     width: 235px;
     overflow: hidden;
     transition: max-height 0.3s ease-in;
   }
+}
+
+.body-active {
+  // margin: 4px auto;
+  overflow: visible;
 }
 
 .accordion-active {
