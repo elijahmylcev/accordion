@@ -1,4 +1,4 @@
-export default function toggleAccordionSection(triggerSelector) {
+const toggleAccordionSection = (triggerSelector) => {
   const trigger = document.querySelector(triggerSelector);
 
   trigger.addEventListener('click', function (e) {
@@ -16,4 +16,6 @@ export default function toggleAccordionSection(triggerSelector) {
       target.nextElementSibling.style.maxHeight = '0px';
     }
   });
-}
+};
+
+export default toggleAccordionSection;
