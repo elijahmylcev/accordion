@@ -10,4 +10,4 @@ hamburger({
   contentActiveClass: 'accordion-active',
 });
 
-accordion('.accordion');
+accordion('.accordion__title');

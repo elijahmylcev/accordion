@@ -1,20 +1,19 @@
-import { delegate } from './delegate';
+import delegate from './delegate';
 
 const accordion = (triggerSelector) => {
-  const trigger = document.querySelector(triggerSelector);
+  const triggers = document.querySelectorAll(triggerSelector);
 
-  // TODO: implement delegate();
   delegate({
-    trigger,
+    triggers: triggers,
     event: 'click',
     condition: (target) => target.className === 'accordion__title',
-    delegate: (target) => {
-      target.lastElementChild.classList.toggle('title-active');
-      target.nextElementSibling.classList.toggle('body-active');
-      if (target.lastElementChild.classList.contains('title-active')) {
-        target.nextElementSibling.style.maxHeight = `${target.nextElementSibling.scrollHeight}px`;
+    cb: (trigger) => {
+      trigger.lastElementChild.classList.toggle('title-active');
+      trigger.nextElementSibling.classList.toggle('body-active');
+      if (trigger.lastElementChild.classList.contains('title-active')) {
+        trigger.nextElementSibling.style.maxHeight = `${trigger.nextElementSibling.scrollHeight}px`;
       } else {
-        target.nextElementSibling.style.maxHeight = '0px';
+        trigger.nextElementSibling.style.maxHeight = '0px';
       }
     },
   });
