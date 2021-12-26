@@ -1,9 +1,19 @@
-export default function hamburger(selectorHamburger, selectorContent) {
-  const hamburger = document.querySelector(selectorHamburger);
-  const accordion = document.querySelector(selectorContent);
+import { Toggler } from './toggler';
 
-  hamburger.addEventListener('click', function () {
-    this.classList.toggle('hamburger-active');
-    accordion.classList.toggle('accordion-active');
+export default function hamburger({
+  selectorHamburger,
+  selectorContent,
+  hamburgerActiveClass,
+  contentActiveClass,
+}) {
+  return new Toggler({
+    trigger: {
+      selector: selectorHamburger,
+      activeClass: hamburgerActiveClass,
+    },
+    content: {
+      selector: selectorContent,
+      activeClass: contentActiveClass,
+    },
   });
 }
