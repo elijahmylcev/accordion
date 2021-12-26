@@ -4,9 +4,9 @@ module.exports = {
   useTabs: false,
   semi: true,
   singleQuote: true,
-  quoteProps: "as-needed",
-  trailingComma: "all",
+  quoteProps: 'as-needed',
+  trailingComma: 'all',
   bracketSpacing: true,
-  arrowParens: "always",
+  arrowParens: 'arrow',
   vueIndentScriptAndStyle: true,
 };
